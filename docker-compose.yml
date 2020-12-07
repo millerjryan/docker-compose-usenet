@@ -202,7 +202,6 @@ services:
       - PUID
       - TZ
       - VERSION=latest
-      - PLEX_CLAIM=claim-AUdEsMzA7oUaPLd_RqjF
     labels:
       traefik.enable: "true"
       traefik.port: "32400"
