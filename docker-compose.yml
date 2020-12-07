@@ -58,8 +58,8 @@ services:
     volumes:
       - ${CONFIG}/sonarr:/config
       - ${DOWNLOAD}/complete:/downloads
-      - ${DATA}/tv:/tv
-      - ${DATA}/anime:/anime
+      - ${DATA}/TV:/tv
+      - ${DATA}/Anime:/anime
     environment:
       - PGID
       - PUID
@@ -81,7 +81,7 @@ services:
     volumes:
       - ${CONFIG}/radarr:/config
       - ${DOWNLOAD}/complete:/downloads
-      - ${DATA}/movies:/movies
+      - ${DATA}/Movies:/movies
     environment:
       - PGID
       - PUID
@@ -104,7 +104,7 @@ services:
       - ${CONFIG}/lidarr:/config
       - /etc/localtime:/etc/localtime:ro
       - ${DOWNLOAD}/complete:/downloads
-      - ${DATA}/music:/music
+      - ${DATA}/Music:/music
     environment:
       - PGID
       - PUID
@@ -125,7 +125,7 @@ services:
     volumes:
       - ${CONFIG}/lazylibrarian:/config
       - ${DOWNLOAD}/complete:/downloads
-      - ${DATA}/books:/books
+      - ${DATA}/Books:/books
     environment:
       - PGID
       - PUID
@@ -147,7 +147,7 @@ services:
     volumes:
       - ${CONFIG}/mylar:/config
       - ${DOWNLOAD}/complete:/downloads
-      - ${DATA}/comics:/comics
+      - ${DATA}/Comics:/comics
     environment:
       - PGID
       - PUID
