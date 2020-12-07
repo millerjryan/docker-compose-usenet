@@ -57,7 +57,7 @@ services:
       - "8989:8989"
     volumes:
       - ${CONFIG}/sonarr:/config
-      - ${DOWNLOAD}/complete:/downloads
+      - ${DOWNLOAD}:/downloads
       - ${DATA}/TV:/tv
       - ${DATA}/Anime:/anime
     environment:
@@ -80,7 +80,7 @@ services:
       - "7878:7878"
     volumes:
       - ${CONFIG}/radarr:/config
-      - ${DOWNLOAD}/complete:/downloads
+      - ${DOWNLOAD}:/downloads
       - ${DATA}/Movies:/movies
     environment:
       - PGID
@@ -103,7 +103,7 @@ services:
     volumes:
       - ${CONFIG}/lidarr:/config
       - /etc/localtime:/etc/localtime:ro
-      - ${DOWNLOAD}/complete:/downloads
+      - ${DOWNLOAD}:/downloads
       - ${DATA}/Music:/music
     environment:
       - PGID
@@ -124,7 +124,7 @@ services:
       - "5299:5299"
     volumes:
       - ${CONFIG}/lazylibrarian:/config
-      - ${DOWNLOAD}/complete:/downloads
+      - ${DOWNLOAD}:/downloads
       - ${DATA}/Books:/books
     environment:
       - PGID
@@ -146,7 +146,7 @@ services:
       - "8090:8090"
     volumes:
       - ${CONFIG}/mylar:/config
-      - ${DOWNLOAD}/complete:/downloads
+      - ${DOWNLOAD}:/downloads
       - ${DATA}/Comics:/comics
     environment:
       - PGID
