@@ -15,7 +15,7 @@ defaultEntryPoints = ["https","http"]
 [retry]
 
 [acme]
-email = "YOU@EXAMPLE.COM"
+email = "joshua.r.sloop.miller@gmail.com"
 storage = "acme.json"
 entryPoint = "https"
 OnHostRule = true
