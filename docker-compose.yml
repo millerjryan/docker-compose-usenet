@@ -296,7 +296,7 @@ services:
       - ${DOWNLOAD}/complete:/downloads
       - ${DOWNLOAD}/incomplete:/incomplete-downloads
       - ${DOWNLOAD}/watch:/watch
-      - ${CONFIG}/intermediate:/intermediate
+      - ${CONFIG}/nzb_intermediate:/intermediate
     environment:
       - PGID
       - PUID
