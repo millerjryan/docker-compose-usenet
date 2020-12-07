@@ -193,10 +193,10 @@ services:
       - "1900:1900/udp"
     volumes:
       - ${CONFIG}/plex:/config
-      - ${DATA}/tv:/media/tv
-      - ${DATA}/movies:/media/movies
-      - ${DATA}/music:/media/music
-      - ${DATA}/anime:/media/anime
+      - ${DATA}/TV:/media/tv
+      - ${DATA}/Movies:/media/movies
+      - ${DATA}/Music:/media/music
+      - ${DATA}/Anime:/media/anime
     environment:
       - PGID
       - PUID
