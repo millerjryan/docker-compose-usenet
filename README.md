@@ -155,3 +155,9 @@ You'll need to either change the HTTPS port specified for the UnRAID WebUI (in _
 If you need assistance, please file an issue. Please do read the [existing closed issues](https://github.com/duhio/docker-compose-usenet/issues?q=is%3Aissue+is%3Aclosed) as they may contain the answer to your question.
 
 Pull requests for bugfixes/improvements are very much welcomed. As are suggestions of new/replacement services.
+
+
+## Note about Plex and setting up Plex server
+Initially when all containers are fully running, Plex is accessible by IP:PORT/web/index.html but the Plex Server configuration is hidden. This is due to the Plex container being behind the Docker Network's IP and not being able to connect to Plex.tv
+I found my solution in this Github issue thread https://github.com/linuxserver/docker-plex/issues/36
+Specifically I had to SSH tunnel to the Plex Docker container ssh -L 8080:localhost:32400 user@dockerhost.mydomain.net, then opened a web browser and went to 127.0.0.1:8080/web/index.html which allowed me to configure my server
