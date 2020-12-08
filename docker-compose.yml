@@ -338,3 +338,18 @@ services:
       traefik.frontend.auth.basic: "${HTPASSWD}"
       com.centurylinklabs.watchtower.enable: "true"
     restart: unless-stopped
+    
+  duplicati:
+    image: ghcr.io/linuxserver/duplicati
+    container_name: duplicati
+    environment:
+      - PUID
+      - PGID
+      - TZ
+    volumes:
+      - ${CONFIG}/duplicati:/config
+      - ${DOWNLOAD}/backups:/backups
+      - ${CONFIG}:/source
+    ports:
+      - 8200:8200
+    restart: unless-stopped
