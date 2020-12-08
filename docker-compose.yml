@@ -352,4 +352,10 @@ services:
       - ${CONFIG}:/source
     ports:
       - 8200:8200
+    labels:
+      traefik.enable: "true"
+      traefik.port: "8200"
+      traefik.frontend.rule: "Host:backups.${DOMAIN}"
+      traefik.frontend.auth.basic: "${HTPASSWD}"
+      com.centurylinklabs.watchtower.enable: "true"
     restart: unless-stopped
