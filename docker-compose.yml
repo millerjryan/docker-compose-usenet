@@ -17,6 +17,7 @@ services:
       - ${CONFIG}/traefik/acme.json:/acme.json
       - ${CONFIG}/traefik/traefik.toml:/etc/traefik/traefik.toml
       - ${CONFIG}/traefik/.htpasswd:/etc/traefik/.htpasswd:ro
+      - ${CONFIG}/traefik/servers.toml:/servers.toml
     environment:
       - PGID
       - PUID      
