@@ -360,3 +360,31 @@ services:
       traefik.frontend.auth.basic: "${HTPASSWD}"
       com.centurylinklabs.watchtower.enable: "true"
     restart: unless-stopped
+    
+  pihole:
+    container_name: pihole
+    image: pihole/pihole:latest
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+      - "67:67/udp"
+      - "80:80/tcp"
+      - "443:443/tcp"
+    environment:
+      TZ: 'America/Chicago'
+      WEBPASSWORD: 'changeme'
+    # Volumes store your data between container upgrades
+    volumes:
+      - ${CONFIG}/pihole/config:/etc/pihole/
+      - ${CONFIG}/pihole/dnsmasq.d:/etc/dnsmasq.d/
+    # Recommended but not required (DHCP needs NET_ADMIN)
+    #   https://github.com/pi-hole/docker-pi-hole#note-on-capabilities
+    cap_add:
+      - NET_ADMIN
+    labels:
+      traefik.enable: "true"
+      traefik.port: "80"
+      traefik.frontend.rule: "Host:pihole.${DOMAIN}"
+      traefik.frontend.auth.basic: "${HTPASSWD}"
+      com.centurylinklabs.watchtower.enable: "true"      
+    restart: unless-stopped
